@@ -32,10 +32,15 @@ namespace Test.Controllers
         public IActionResult Calc(int x, int y)
         {
             int result = x + y;
-            return View(result);
+            ViewBag.Text = result;
+            return View();
         }
-      
-        
+
+        public IActionResult CalcString(string id)
+        {
+            return View("Ваш номер ="+ id);
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

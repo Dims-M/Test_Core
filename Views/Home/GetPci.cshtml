@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "Получение PKI и ИНН Организации";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Контролер Create GetPkiAndNumberInnAndNumberTtn</title>
+</head>
+<body>
+
+    <!--Данные отправляются с помощью POST запроса-->
+    <form action="/Utm/Utm" method="post">
+        <b>PKI Организации</b>
+        <input type="number" name="message" />
+        <br>
+        <b>ИНН Организации</b>
+        <input type="number" name="message1" />
+        <br>
+        <input type="submit" value="Отправить на сервер" />
+    </form>
+
+    <a href="/Home/">На главную</a>
+</body>
+</html>

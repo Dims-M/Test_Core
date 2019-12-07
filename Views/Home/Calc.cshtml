@@ -4,7 +4,29 @@
     ViewData["Title"] = "Калькулятор";
 }
 
-<h1> Контролер Calc</h1>
+<!DOCTYPE html>
 
-<p>Пузультат сложения = @Model</p>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Контролер Calc</title>
+</head>
+<body>
+    
+    <p>Результат сложения = @Model</p>
 
+    <!--Данные отправляются с помощью POST запроса-->
+    <form action="/Data/Create" method="post">
+        <input type="number" name="message" />
+        <input type="number" name="message1" />
+        <input type="submit" value="Отправить на сервер" />
+    </form>
+
+    <!--Данные отправляются с помощью GET запроса, как данные в маршруте-->
+    <a href="/Data/Catalog/Some-Product">Route Data</a>
+
+    <br />
+    <!--Данные отправляются с помощью GET запроса, как данные адресной строки-->
+    <a href="/Data/Users?id=100">QueryString Data</a>
+</body>
+</html>

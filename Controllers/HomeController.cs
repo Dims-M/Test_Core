@@ -18,6 +18,7 @@ namespace Test.Controllers
             _logger = logger;
         }
 
+        //Контроллер поумолчанию
         public IActionResult Index()
         {
             return View();
@@ -28,6 +29,12 @@ namespace Test.Controllers
             return View();
         }
 
+        public IActionResult GetPci()
+        {
+            return View("GetPci");
+        }
+
+
         // /home/Calc
         public IActionResult Calc(int x, int y)
         {
@@ -35,8 +42,16 @@ namespace Test.Controllers
             ViewBag.Text = result;
             return View();
         }
+        // /home/Create
+        [HttpPost]
+        public IActionResult Create(int x, int y)
+        {
+            int result = x + y;
+            ViewBag.Text = result;
+            return View();
+        }
 
-        public IActionResult CalcString(string id)
+        public IActionResult CalcString (string id)
         {
             return View("Ваш номер ="+ id);
         }

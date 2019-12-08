@@ -37,7 +37,7 @@ namespace ReadFromRequest.Controllers
         {
             // Чтение данных, которые передаются с помощью GET запроса, как данные в маршруте.
             ViewBag.Text = RouteData.Values["id"];
-            return View("Index");
+            return View("ResulCalc");
         }
 
         //
@@ -47,7 +47,7 @@ namespace ReadFromRequest.Controllers
         {
             // Чтение данных, которые передаются в адресной строке.
             ViewBag.Text = Request.Query["id"];
-            return View("Index");
+            return View("ResulCalc");
         }
     }
 }

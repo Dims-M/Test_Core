@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "Всяко разно!!!";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Контролер VsakoRaznoController</title>
+</head>
+<body>
+
+    <!--Данные отправляются с помощью POST запроса-->
+    <form action="/VsakoRazno/GetAlll" method="post">
+        <b>ВВедите тестовую информациюи</b>
+        <input type="text" name="message" />
+        @*<br>
+        <b>ИНН Организации</b>
+        <input type="number" name="message1" />
+        <br>*@
+        <input type="submit" value="Отправить на сервер" />
+    </form>
+
+    <a href="/Home/">На главную страницу</a>
+</body>
+</html>

@@ -34,6 +34,14 @@ namespace Test.Controllers
             return View("GetPci");
         }
 
+        /// <summary>
+        /// Переодрисация с главной страницы
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult GetAlll()
+        {
+            return View("GetAlll");
+        }
 
         // /home/Calc
         public IActionResult Calc(int x, int y)

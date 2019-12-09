@@ -23,5 +23,15 @@ namespace Test.Controllers
             return View(); // Вызываем нужную вьюху
         }
 
+        public IActionResult Primer1()
+        {
+            //ViewBag.Text = Redirect.
+            return Redirect("https://yandex.ru/"); // перенапровление на сайт
+        }
+
+        public IActionResult Primer2()
+        {
+            return Redirect("/Home/Calc"); // перенапровление на страницу с калькулятором
+        }
     }
 }

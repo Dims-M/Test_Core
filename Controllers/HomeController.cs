@@ -43,6 +43,11 @@ namespace Test.Controllers
             return View("GetAlll");
         }
 
+        public IActionResult Primer1()
+        {
+            return Redirect("https://yandex.ru/");
+        }
+
         // /home/Calc
         public IActionResult Calc(int x, int y)
         {

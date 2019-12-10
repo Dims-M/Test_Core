@@ -20,6 +20,7 @@ namespace Test
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
+        //Этот метод вызывается средой выполнения. Используйте этот метод для добавления служб в контейнер.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
@@ -49,7 +50,7 @@ namespace Test
                    pattern: "{controller}/{action=Index}/{x}/{y}"
                    );
 
-                endpoints.MapControllerRoute(
+                endpoints.MapControllerRoute( //j
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });

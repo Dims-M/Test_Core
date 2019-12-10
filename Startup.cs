@@ -29,20 +29,26 @@ namespace Test
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            // если приложение в процессе разработки
             if (env.IsDevelopment())
             {
+                // то выводим информацию об ошибке, при наличии ошибки
                 app.UseDeveloperExceptionPage();
             }
             else
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+            // добавляем возможност работы со статическими файлами
             app.UseStaticFiles();
 
+            // добавляем возможности маршрутизации
             app.UseRouting();
 
+            // добавляем возможности авторизации
             app.UseAuthorization();
 
+            // устанавливаем адреса, которые будут обрабатываться
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

@@ -17,9 +17,10 @@ namespace Test.Controllers
             return View();
         }
 
-        
+      
+
         //Основная панель
-            public IActionResult Summary()
+        public IActionResult Summary()
         {
             return View();
         }

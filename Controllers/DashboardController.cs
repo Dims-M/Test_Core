@@ -23,5 +23,13 @@ namespace Test.Controllers
         {
             return View();
         }
+
+
+        //Получаем все товары из БД
+        public IActionResult GetAllGoods()
+        {
+            return View();
+        }
+
     }
 }

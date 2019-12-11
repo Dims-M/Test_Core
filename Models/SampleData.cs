@@ -6,11 +6,17 @@ using Test.Models; //связь с БДы
 
 namespace Test
 {
-    public class SampleData
+    /// <summary>
+    /// Тестовой класс. Который заполняет бд
+    /// </summary>
+    public static class SampleData
     {
 
-        public static void Initialize(MobileContext context)
+         public static void Initialize(MobileContext context)
+       // public static void Initialize(IServiceProvider serviceProvider)
         {
+           // var context = serviceProvider.GetService(typeof(MobileContext)) as MobileContext;
+
             if (!context.Phones.Any())
             {
                 context.Phones.AddRange(

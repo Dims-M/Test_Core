@@ -30,7 +30,11 @@ namespace Test
 
             //Строка подключения к БД
             string connection = Configuration.GetConnectionString("DefaultConnection");
+            string connection2 = Configuration.GetConnectionString("DefaultConnection2");
             services.AddDbContext<MobileContext>(options => options.UseSqlServer(connection));
+            services.AddDbContext<DbConnection1Context>(options => options.UseSqlServer(connection2));
+
+
             services.AddControllersWithViews();
 
         }
@@ -56,6 +60,8 @@ namespace Test
 
             // добавляем возможности авторизации
             app.UseAuthorization();
+
+             
 
             // устанавливаем адреса, которые будут обрабатываться
             app.UseEndpoints(endpoints =>

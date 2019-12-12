@@ -2,8 +2,11 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace Test
+namespace Test.Models
 {
+    /// <summary>
+    /// Обьект для связи с БД Гуглее Таблице
+    /// </summary>
     public partial class DbConnection1Context : DbContext
     {
         public DbConnection1Context()

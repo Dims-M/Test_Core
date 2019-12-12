@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Test.TablGoogles>
+
+@{
+    ViewData["Title"] = "GetTablesAlls";
+}
+
+<h1>Получение всех товаров</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NameClienta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PassClient)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TelefonClient)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataTimeAddTable)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameClienta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PassClient)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TelefonClient)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataTimeAddTable)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

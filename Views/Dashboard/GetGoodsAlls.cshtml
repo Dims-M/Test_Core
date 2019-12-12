@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Test.Models.Phone> 
+
+@{
+    //ViewData["Title"] = "Список смартфонов";
+    //Layout = null; //можно раскоментить
+}
+ 
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Магазин смартфонов</title>
+</head>
+<body>
+    <h4> метод контроллера GetGoodsAlls</h4>
+    <h3>Смартфоны в наличии</h3>
+    <table> @*таблица*@ 
+        <tr>
+            <td>Модель</td> @*строки с товаром*@ 
+            <td>Производитель</td>
+            <td>Цена</td>
+            <td></td>
+        </tr>
+        @foreach (var phone in Model)
+        {
+            <tr>
+                <td>@phone.Name</td>
+                <td>@phone.Company</td>
+                <td>@phone.Price</td>
+                @*<td><a href="~/Home/Buy/@phone.Id">Купить</a></td>*@ 
+            </tr>
+        }
+    </table>
+</body>
+</html>

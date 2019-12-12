@@ -69,10 +69,27 @@ namespace Test.Controllers
             return View(db.Phones.ToList()); // получаем список всех товаров
         }
 
-       
-            public IActionResult Buy()
+        /// <summary>
+        /// Метод покупки телефона
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet]
+        public IActionResult Buy(int? id)
         {
+            if (id == null) return RedirectToAction("Index");
+            ViewBag.PhoneId = id;
             return View();
+        }
+
+
+        [HttpPost]
+        public string Buy(Order order)
+        {
+            db.Orders.Add(order);
+            // сохраняем в бд все изменения
+            db.SaveChanges();
+            return "Спасибо, " + order.User + ", за покупку!";
         }
 
         ///// <summary>

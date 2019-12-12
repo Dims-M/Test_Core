@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Test.Models.Phone> 
 
 @{
-    //ViewData["Title"] = "Список смартфонов";
+    ViewData["Title"] = "Список смартфонов";
     //Layout = null; //можно раскоментить
 }
  
@@ -27,7 +27,7 @@
                 <td>@phone.Name</td>
                 <td>@phone.Company</td>
                 <td>@phone.Price</td>
-                @*<td><a href="~/Home/Buy/@phone.Id">Купить</a></td>*@ 
+                <td><a href="~/Home/Buy/@phone.Id">Купить</a></td> 
             </tr>
         }
     </table>

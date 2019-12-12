@@ -34,6 +34,8 @@ namespace Test.Controllers
             db = context;
 
         }
+
+        #region Примеры тесты
         ////Конструктор контролера. При передачи контекста. Обращается к БД  Временно отключим
         //public DashboardController(DbContext context)
         //{
@@ -49,6 +51,7 @@ namespace Test.Controllers
         //{
         //   // dbTable = context;
         //}
+        #endregion
 
         //Основная панель
         public IActionResult Summary()

@@ -72,24 +72,36 @@ namespace Test.Controllers
         /// <summary>
         /// Метод покупки телефона
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">номер товара</param>
         /// <returns></returns>
-        [HttpGet]
-        public IActionResult Buy(int? id)
+        [HttpGet] // получение, чтение из БД
+        public IActionResult Buy(int? id) // значение может быть  null
         {
-            if (id == null) return RedirectToAction("Index");
-            ViewBag.PhoneId = id;
-            return View();
+            if (id == null) return RedirectToAction("Summary"); //если значения пустые. Возращаем гланую страницу
+            ViewBag.PhoneId = id; // контейнер строк для передачи во вьюху Buy 
+            return View(); 
         }
 
-
-        [HttpPost]
-        public string Buy(Order order)
+        /// <summary>
+        /// метод для записи в таблицу БД  Buy
+        /// </summary>
+        /// <param name="order">обьект с данными типа класса Order</param>
+        /// <returns></returns>
+        [HttpPost] // отправка с браузера на запись
+        public IActionResult Buy(Order order)
         {
-            db.Orders.Add(order);
-            // сохраняем в бд все изменения
-            db.SaveChanges();
-            return "Спасибо, " + order.User + ", за покупку!";
+            db.Orders.Add(order); //отпровляем в контекст для закрызки в БД
+            // сохраняем в бд все изменения                                                                                                                        
+            db.SaveChanges(); // команда принять и записать все изменения в БД 
+            ViewBag.Text = order.User;
+            //return "Спасибо, " + order.User + ", за покупку! Ваш заказ принят в обработку и будет доставлен в ближайшее время )))\t\n ";
+            return RedirectToAction("PostBuy");
+        }
+
+        //Заглушка
+        public IActionResult PostBuy()
+        {
+            return View();  
         }
 
         ///// <summary>

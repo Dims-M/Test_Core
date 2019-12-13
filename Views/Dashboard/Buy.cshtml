@@ -1,7 +1,44 @@
 ﻿
 @{
-    ViewData["Title"] = "Buy";
+    ViewData["Title"] = "Продажа телефона";
 }
 
-<h1>Buy</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Оформление заказа</title>
+</head>
+<body>
+    <div>
+        <h3>Форма оформления покупки</h3>
+        <p>Для оформления покупки заполните следующие поля:</p>
 
+        <form method="post">
+            @*Метод пост. контолер отреагирует*@
+            <input type="hidden" value="@ViewBag.PhoneId" name="PhoneId" />
+            <table>
+                <tr>
+                    <td>Имя:</td>
+                    <td><input type="text" name="User" /> </td>
+                </tr>
+                <tr>
+                    <td>Адрес:</td>
+                    <td><input type="text" name="Address" /></td>
+                </tr>
+                <tr>
+                    <td>Телефон:</td>
+                    <td><input type="text" name="ContactPhone" /></td>
+                </tr>
+                <tr><td><input type="submit" value="Отправить" /> </td><td></td></tr>
+            </table>
+        </form>
+    </div>
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="~/Dashboard/GetGoodsAlls/">Продолжить покупки.</a>.</p>
+        <p>Learn about <a href="~/Home/Index/">Зайти в Личный кабинет!.</a>.</p>
+    </div>
+</body>
+
+</html>

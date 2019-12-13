@@ -12,6 +12,6 @@ namespace Test
         public string NameClienta { get; set; }
         public string PassClient { get; set; }
         public string TelefonClient { get; set; }
-       public string DataTimeAddTable { get; set; }
+       //public string DataTimeAddTable { get; set; }
     }
 }

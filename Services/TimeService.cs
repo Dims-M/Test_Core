@@ -17,11 +17,11 @@ namespace Test.Services
     //    }
     //}
     /// <summary>
-    /// Определяем текущм время. 
+    /// Определяем текущие время. 
     /// </summary>
     public  class TimeService
     {
-        public static string GetTime() => System.DateTime.Now.ToString("hh:mm:ss"); //Поучаем время по текущей маске
+        public static string GetTime() => System.DateTime.Now.ToString("hh:mm:ss"); //Получаем время по текущей маске
 
         //
         

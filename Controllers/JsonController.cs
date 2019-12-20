@@ -27,7 +27,9 @@ namespace Test.Controllers
         }
 
 
-
+        /// <summary>
+        /// Класс описывающий клиента. для работы с json обьеками
+        /// </summary>
         private class Client
         {
             public Client()

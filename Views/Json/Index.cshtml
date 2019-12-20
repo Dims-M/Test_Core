@@ -28,10 +28,10 @@
 
 
     <p>
-        <a asp-action="clientinfo">Полчть данные. И Заполнить</a> @*// кнопка*@ 
+        <a asp-action="ClientInfo">Получть данные. В строке. В новом окне</a> @*// кнопка*@ 
     </p>
 
-    <button id="button">JS Client</button>
+    <button id="button">Получть данные. И Заполнить</button>
 
     <p>Id: <span id="idspan"></span></p>
     <p>Login: <span id="loginspan"></span></p>
@@ -42,7 +42,7 @@
         let xhr = new XMLHttpRequest();
 
         btn.addEventListener("click", () => {
-            xhr.open("GET", "/json/clientinfo");
+            xhr.open("GET", "/json/clientinfo"); /*// получаем строку jsona из контролера с помощью гет запроса*/
             xhr.onload = () => {
                 let response = JSON.parse(xhr.response);
                 document.querySelector("#idspan").innerHTML = response.id;

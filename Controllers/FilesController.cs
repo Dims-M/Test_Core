@@ -46,7 +46,7 @@ namespace Test.Controllers
         //на основе физического файла на жест диске
         public IActionResult SetFasilPhysicalFileStreamle3()
         {
-            return PhysicalFile(environment.ContentRootPath + @"\App_Data\docKKM.pdf", "application/pdf");
+            return PhysicalFile(environment.ContentRootPath + @"\App_Data\docKKM.pdf", "application/pdf", "docKKM.pdf");
         }
 
     }

@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "Registracion для пользователя";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Registration</title>
+</head>
+<body>
+    <h1>Регистрация</h1>
+    @*
+        Данная форма реализована средствами HTML для демонстрации работы привязки модели.
+        Для построения форм в ASP.NET Core используются дескрипторные вспомогательные классы, которые будут рассмотрены в следующих уроках
+    *@
+    <form action="/Home/Registration" method="post">
+        <label>Имя</label>
+        <input name="firstName" />
+        <br />
+        <label>Фамилия</label>
+        <input name="lastName" />
+        <br />
+        <label>Email</label>
+        <input type="email" name="email" />
+        <br />
+        <label>Контактный телефон</label>
+        <input type="tel" name="phoneNumber" />
+        <br />
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>

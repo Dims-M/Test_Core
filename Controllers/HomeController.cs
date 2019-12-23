@@ -29,6 +29,12 @@ namespace Test.Controllers
             return View();
         }
 
+        //Контролер срабатывающий при регистраци
+        public IActionResult Registracion()
+        {
+            return View();
+        }
+
         public IActionResult GetPci()
         {
             return View("GetPci");

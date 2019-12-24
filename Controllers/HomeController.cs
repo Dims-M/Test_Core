@@ -29,9 +29,25 @@ namespace Test.Controllers
             return View();
         }
 
-        //Контролер срабатывающий при регистраци
+        //Контролер срабатывающий при регистраци. Откроется вьюха с формами регистрации
         public IActionResult Registracion()
         {
+            return View();
+        }
+
+        // Метод действия, который запустится, когда пользователь сделает submit формы (отправит POST запрос на сервер).
+        // При вызове данного метода, произойдет привязка модели, входящие данные в теле запроса, которые совпадают с названиями аргументов,
+        // будут записаны в эти аргументы.
+        [HttpPost]
+        public IActionResult Registration(string firstName, string lastName, string email, string phoneNumber)
+        {
+            // Обработка полученных данных
+
+            Debug.WriteLine("First Name = " + firstName);
+            Debug.WriteLine("Last Name = " + lastName);
+            Debug.WriteLine("Email = " + email);
+            Debug.WriteLine("Phone Number = " + phoneNumber);
+
             return View();
         }
 

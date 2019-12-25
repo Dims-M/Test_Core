@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using DisplayAttributeSample.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Test.Models;
@@ -39,16 +40,22 @@ namespace Test.Controllers
         // При вызове данного метода, произойдет привязка модели, входящие данные в теле запроса, которые совпадают с названиями аргументов,
         // будут записаны в эти аргументы.
         [HttpPost]
-        public IActionResult Registration(string firstName, string lastName, string email, string phoneNumber)
+        public IActionResult Registration(RegistrationBindingModel model)
         {
             // Обработка полученных данных
 
-            Debug.WriteLine("First Name = " + firstName);
-            Debug.WriteLine("Last Name = " + lastName);
-            Debug.WriteLine("Email = " + email);
-            Debug.WriteLine("Phone Number = " + phoneNumber);
+            //Debug.WriteLine("First Name = " + firstName);
+            //Debug.WriteLine("Last Name = " + lastName);
+            //Debug.WriteLine("Email = " + email);
+            //Debug.WriteLine("Phone Number = " + phoneNumber);
+            Debug.WriteLine(model.Login);
+            Debug.WriteLine(model.Email);
+            Debug.WriteLine(model.Password);
+            Debug.WriteLine(model.PasswordConfirm);
+            Debug.WriteLine(model.TermsAccepted);
 
-            return View();
+            return View("Success");
+           // return View();
         }
 
         public IActionResult GetPci()

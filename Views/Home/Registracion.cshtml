@@ -1,4 +1,4 @@
-﻿
+﻿@*@model RegistrationBindingModel*@
 @{
     ViewData["Title"] = "Registracion для пользователя";
 }
@@ -9,27 +9,63 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Registration</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
-<body>
-    <h1>Регистрация</h1>
-    @*
-        Данная форма реализована средствами HTML для демонстрации работы привязки модели.
-        Для построения форм в ASP.NET Core используются дескрипторные вспомогательные классы, которые будут рассмотрены в следующих уроках
-    *@
-    <form action="/Home/Registration" method="post">
-        <label>Имя</label>
-        <input name="firstName" />
-        <br />
-        <label>Фамилия</label>
-        <input name="lastName" />
-        <br />
-        <label>Email</label>
-        <input type="email" name="email" />
-        <br />
-        <label>Контактный телефон</label>
-        <input type="tel" name="phoneNumber" />
-        <br />
-        <button type="submit">Register</button>
-    </form>
+
+@*
+    Данная форма реализована средствами HTML для демонстрации работы привязки модели.
+    Для построения форм в ASP.NET Core используются дескрипторные вспомогательные классы, которые будут рассмотрены в следующих уроках
+*@
+<body class="card-body">
+    @*<form asp-controller="home" asp-action="register" method="post"> //какой контролер отрабаывает и в кокой метод
+            <div class="form-group">
+                <label asp-for="Login"></label> //Надпись
+                <input asp-for="Login" class="form-control" /> //сам контрол
+            </div>
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Password"></label>
+                <input asp-for="Password" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="PasswordConfirm"></label>
+                <input asp-for="PasswordConfirm" class="form-control" />
+            </div>
+            <div class="form-check">
+                <input asp-for="TermsAccepted" class="form-check-input" value="true" />
+                <label asp-for="TermsAccepted"></label>
+            </div>
+            <button class="btn btn-primary" type="submit">Зарегистрироваться</button>
+        </form>*@
+    Используются 
+    <div>
+        <form action="/Home/Registration" method="post">
+            <div class="form-group">
+                <label for="Login">Login:</label>
+                <input type="text" name="Login" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="Email">Email:</label>
+                <input type="email" name="Email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="Password">Password:</label>
+                <input type="password" name="Password" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="PasswordConfirm">Password Confirm:</label>
+                <input type="password" name="PasswordConfirm" class="form-control" />
+            </div>
+            <div class="form-check">
+                <input type="checkbox" name="TermsAccepted" class="form-check-input" value="true" />
+                <label for="TermsAccepted">Terms Accepted</label>
+            </div>
+            <button class="btn btn-primary" type="submit">Завершить регистрацию</button>
+        </form>
+    </div>
+
 </body>
 </html>

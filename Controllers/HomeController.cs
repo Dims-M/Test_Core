@@ -50,11 +50,11 @@ namespace Test.Controllers
         // При вызове данного метода, произойдет привязка модели, входящие данные в теле запроса, которые совпадают с названиями аргументов,
         // будут записаны в эти аргументы.
         [HttpPost]
-        public IActionResult Registration(RegistrationBindingModel model )
+        public IActionResult Registration(RegistrationBindingModel model, string selectListItems)
         {
             // Обработка полученных данных
 
-            
+            Debug.WriteLine("Selected - " + selectListItems);
 
             //Debug.WriteLine("First Name = " + firstName);
             //Debug.WriteLine("Last Name = " + lastName);
@@ -66,7 +66,7 @@ namespace Test.Controllers
             Debug.WriteLine(model.PasswordConfirm);
             Debug.WriteLine(model.TermsAccepted);
 
-            return View("Success"); //во вьюхе серез модель будет отображатся выбранный день недели
+            return View("Success", selectListItems); //во вьюхе серез модель будет отображатся выбранный день недели
            // return View();
         }
 

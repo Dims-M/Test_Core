@@ -17,6 +17,7 @@
     Для построения форм в ASP.NET Core используются дескрипторные вспомогательные классы, которые будут рассмотрены в следующих уроках
 *@
 <body class="card-body">
+
     @*<form asp-controller="home" asp-action="register" method="post"> //какой контролер отрабаывает и в кокой метод
             <div class="form-group">
                 <label asp-for="Login"></label> //Надпись
@@ -40,7 +41,8 @@
             </div>
             <button class="btn btn-primary" type="submit">Зарегистрироваться</button>
         </form>*@
-    Используются 
+
+    @*НЕ Используются  такой метод работы с action*@
     <div>
         <form action="/Home/Registration" method="post">
             <div class="form-group">

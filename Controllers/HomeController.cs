@@ -38,6 +38,7 @@ namespace Test.Controllers
         }
 
         //Контролер срабатывающий при регистраци. Откроется вьюха с формами регистрации
+        [HttpPost]
         public IActionResult Registracion(RegistrationBindingModel model)
         {
             string[] sourse = { "Понедельник", "Втторник", "Среда", "Четверг", "Питница", "Суббота", "Воскрсенье", }; //Нужные данные. например из Базы данных
@@ -109,88 +110,10 @@ namespace Test.Controllers
         // Метод действия, который запустится, когда пользователь сделает submit формы (отправит POST запрос на сервер).
         // При вызове данного метода, произойдет привязка модели, входящие данные в теле запроса, которые совпадают с названиями аргументов,
         // будут записаны в эти аргументы.
-        [HttpPost]
-        public IActionResult Registration(RegistrationBindingModel model)
+       
+        public IActionResult Registracion()
         {
-            // Обработка полученных данных
-
-          //  Debug.WriteLine("Selected - " + selectListItems); //во вьюхе будет показана эта строка
-
-            //Debug.WriteLine("First Name = " + firstName);
-            //Debug.WriteLine("Last Name = " + lastName);
-            //Debug.WriteLine("Email = " + email);
-            //Debug.WriteLine("Phone Number = " + phoneNumber);
-
-            //Debug.WriteLine(model.Login);
-            //Debug.WriteLine(model.Email);
-            //Debug.WriteLine(model.Password);
-            //Debug.WriteLine(model.PasswordConfirm);
-            //Debug.WriteLine(model.TermsAccepted);
-
-
-            // ModelState.AddModelError - для HTML элементов, которые привязаны к свойству, указанному в первом параметре добавляется CSS класс input-validation-error
-            // ModelState.AddModelError - меняет состояние модели на невалидное
-            // ModelState.AddModelError - добавляет текст ошибки, связанный со свойством, указанном в первом параметре
-            //if (string.IsNullOrEmpty(model.Login))
-            //{
-            //    ModelState.AddModelError(nameof(model.Login), "Введите имя");
-            //}
-
-            //if (!string.IsNullOrEmpty(model.Login) && model.Login.Length > 50)
-            //{
-            //    ModelState.AddModelError(nameof(model.Login), "Значение имени не может привышать 50 символов");
-            //}
-
-            ////if (string.IsNullOrEmpty(model. LastName))
-            ////{
-            ////    ModelState.AddModelError(nameof(model.LastName), "Введите фамилию");
-            ////}
-
-            ////if (!string.IsNullOrEmpty(model.LastName) && model.LastName.Length > 50)
-            ////{
-            ////    ModelState.AddModelError(nameof(model.LastName), "Значение фамилии не может привышать 50 символов");
-            ////}
-
-            //if (string.IsNullOrEmpty(model.Email))
-            //{
-            //    ModelState.AddModelError(nameof(model.Email), "Введите Email");
-            //}
-
-            //if (!string.IsNullOrEmpty(model.Email) && !Regex.IsMatch(model.Email, @"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$"))
-            //{
-            //    ModelState.AddModelError(nameof(model.Email), "Не правильный формат Email");
-            //}
-
-            //if (string.IsNullOrEmpty(model.Password))
-            //{
-            //    ModelState.AddModelError(nameof(model.Password), "Введите пароль");
-            //}
-
-            //if (string.IsNullOrEmpty(model.PasswordConfirm))
-            //{
-            //    ModelState.AddModelError(nameof(model.PasswordConfirm), "Введите подтверждение пароля");
-            //}
-
-            //if (model.Password != model.PasswordConfirm)
-            //{
-            //    ModelState.AddModelError(nameof(model.Password), "Пароли не совпадают");
-            //}
-            //// Если модель прошла проверку и значения свойств соответствуют атрибутом установленным на модели,
-            //// то свойство ModelState.IsValid получает значение true
-            //if (ModelState.IsValid)
-            //{
-            //    Debug.WriteLine($"В базу записан пользователь: {model.Login}  (email: {model.Email}, tel: {model.Phone})");
-            //    return View("Success");
-            //}
-            //else
-            //{
-            //    // если модель содержит значения противоречащие бизнес правилам - возвращаем то же самое представление с неправильными данными
-            //    // для того, чтобы пользователь мог их поправить
-            //   // return View(Registration(model)); // просто закрывается окно
-            //    return View(model);
-            //}
-
-          //  return View("Success", selectListItems); //во вьюхе серез модель будет отображатся выбранный день недели
+           
             return View();
         }
 

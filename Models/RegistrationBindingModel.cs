@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace DisplayAttributeSample.Models
+namespace Test.Models
 {
     public class RegistrationBindingModel
     {

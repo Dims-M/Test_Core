@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using DisplayAttributeSample.Models;
+//using DisplayAttributeSample.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Test.Models;
@@ -35,7 +35,7 @@ namespace Test.Controllers
         {
             return View();
         }
-        #region
+       
         // Метод действия, который запустится, когда пользователь сделает submit формы (отправит POST запрос на сервер).
         // При вызове данного метода, произойдет привязка модели, входящие данные в теле запроса, которые совпадают с названиями аргументов,
         // будут записаны в эти аргументы.

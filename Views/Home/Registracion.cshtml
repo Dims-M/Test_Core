@@ -10,6 +10,12 @@
     <meta name="viewport" content="width=device-width" />
     <title>Registration</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        .input-validation-error {
+            border-color: red;
+        }
+    </style>
 </head>
 
 @*
@@ -17,38 +23,44 @@
     Для построения форм в ASP.NET Core используются дескрипторные вспомогательные классы, которые будут рассмотрены в следующих уроках
 *@
 <body class="card-body">
-
+    <h4>Регистрация</h4>
     <form asp-controller="home" asp-action="Registration" method="post">
         //какой контролер отрабаывает и в кокой метод
         <div class="form-group">
             <label asp-for="Login"></label> @*//Надпись*@
             <input asp-for="Login" class="form-control" /> @*//сам контрол*@
+            <span asp-validation-for="Login" class="text-danger"></span> @*//Проверка на коректность апрсов*@
         </div>
         <div class="form-group">
             <label asp-for="Email"></label>
             <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="Password"></label>
             <input asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="PasswordConfirm"></label>
             <input asp-for="PasswordConfirm" class="form-control" />
+            <span asp-validation-for="PasswordConfirm" class="text-danger"></span>
         </div>
         <div class="form-group">
             <label asp-for="Phone"></label>
             <input asp-for="Phone" class="form-control" />
+            <span asp-validation-for="Phone" class="text-danger"></span>
         </div>
         <div class="form-check">
             <input asp-for="TermsAccepted" class="form-check-input" value="true" />
             <label asp-for="TermsAccepted"></label>
+            <span asp-validation-for="TermsAccepted" class="text-danger"></span>
         </div>
 
-        <div>
+        @*<div>
             <select name="selectListItems" asp-items="@ViewBag.SelectItems"></select>
             <input type="submit" />
-        </div>
+        </div>*@
 
         <button class="btn btn-primary" type="submit">Зарегистрироваться</button>
     </form>
@@ -56,9 +68,9 @@
     @*//Пример работы http секциями*@
 
     @*<form asp-action="Index" asp-controller="Home" method="post">
-        <select name="selectedItem" asp-items="@ViewBag.SelectItems"></select>
-        <input type="submit" />
-    </form>*@
+            <select name="selectedItem" asp-items="@ViewBag.SelectItems"></select>
+            <input type="submit" />
+        </form>*@
 
     @*НЕ Используются  такой метод работы с action*@
     @*<div>

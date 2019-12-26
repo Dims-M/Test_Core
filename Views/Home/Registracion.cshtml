@@ -58,9 +58,9 @@
         </div>
 
         @*<div>
-            <select name="selectListItems" asp-items="@ViewBag.SelectItems"></select>
-            <input type="submit" />
-        </div>*@
+                <select name="selectListItems" asp-items="@ViewBag.SelectItems"></select>
+                <input type="submit" />
+            </div>*@
 
         <button class="btn btn-primary" type="submit">Зарегистрироваться</button>
     </form>
@@ -98,6 +98,9 @@
                 <button class="btn btn-primary" type="submit">Завершить регистрацию</button>
             </form>
         </div>*@
-
+    @*//Скрипт для валидации введеных данных пользователей на форме*@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
 </body>
 </html>

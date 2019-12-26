@@ -9,6 +9,13 @@
 
 <ul class="navbar-nav flex-grow-1">
 
+    @*//Пример работы http секциями*@
+
+    @*<form asp-action="Index" asp-controller="Home" method="post">
+        <select name="selectedItem" asp-items="@ViewBag.SelectItems"></select>
+        <input type="submit" />
+    </form>*@
+
     <li class="nav-item">
         <a class="nav-link text-dark" asp-area="" asp-controller="Dashboard" asp-action="GetGoodsAlls">Показать товары в наличии</a>
     </li>

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 //using DisplayAttributeSample.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using Test.Models;
 
@@ -22,7 +23,12 @@ namespace Test.Controllers
         //Контроллер поумолчанию
         public IActionResult Index()
         {
+            //string[] sourse = { "Понедельник", "Втторник", "Среда", "Четверг", "Питница", "Суббота", "Воскрсенье", };
+            //SelectList selectListItems = new SelectList(sourse); // создаем специальны лист для выподающего списка
+            //ViewBag.SelectItems = selectListItems; //Создаем спец переменную ViewBag.SelectItems. В которой во вьюхе можно обращатсяпо имени
+
             return View();
+           // return Redirect("~/Home/Registracion");
         }
 
         public IActionResult Privacy()
@@ -33,16 +39,22 @@ namespace Test.Controllers
         //Контролер срабатывающий при регистраци. Откроется вьюха с формами регистрации
         public IActionResult Registracion()
         {
-            return View();
+            string[] sourse = { "Понедельник", "Втторник", "Среда", "Четверг", "Питница", "Суббота", "Воскрсенье", };
+            SelectList selectListItems = new SelectList(sourse); // создаем специальны лист для выподающего списка
+            ViewBag.SelectItems = selectListItems; //Создаем спец переменную ViewBag.SelectItems. В которой во вьюхе можно обращатсяпо имени
+
+            return View(); // 
         }
        
         // Метод действия, который запустится, когда пользователь сделает submit формы (отправит POST запрос на сервер).
         // При вызове данного метода, произойдет привязка модели, входящие данные в теле запроса, которые совпадают с названиями аргументов,
         // будут записаны в эти аргументы.
         [HttpPost]
-        public IActionResult Registration(RegistrationBindingModel model)
+        public IActionResult Registration(RegistrationBindingModel model )
         {
             // Обработка полученных данных
+
+            
 
             //Debug.WriteLine("First Name = " + firstName);
             //Debug.WriteLine("Last Name = " + lastName);
@@ -54,7 +66,7 @@ namespace Test.Controllers
             Debug.WriteLine(model.PasswordConfirm);
             Debug.WriteLine(model.TermsAccepted);
 
-            return View("Success");
+            return View("Success"); //во вьюхе серез модель будет отображатся выбранный день недели
            // return View();
         }
 

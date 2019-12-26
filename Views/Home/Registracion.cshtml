@@ -36,14 +36,18 @@
             <label asp-for="PasswordConfirm"></label>
             <input asp-for="PasswordConfirm" class="form-control" />
         </div>
+        <div class="form-group">
+            <label asp-for="Phone"></label>
+            <input asp-for="Phone" class="form-control" />
+        </div>
         <div class="form-check">
             <input asp-for="TermsAccepted" class="form-check-input" value="true" />
             <label asp-for="TermsAccepted"></label>
         </div>
 
         <div>
-        <select name="selectListItems" asp-items="@ViewBag.SelectItems"></select>
-        <input type="submit" />
+            <select name="selectListItems" asp-items="@ViewBag.SelectItems"></select>
+            <input type="submit" />
         </div>
 
         <button class="btn btn-primary" type="submit">Зарегистрироваться</button>

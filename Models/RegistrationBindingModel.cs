@@ -21,6 +21,10 @@ namespace Test.Models
         [UIHint("Password")]
         public string PasswordConfirm { get; set; }
 
+        [Display(Name = "Телефон")]
+        [UIHint("Phone")]
+        public int Phone { get; set; }
+
         [Display(Name = "Согласен с условиями использования")]
         public bool TermsAccepted { get; set; }
     }

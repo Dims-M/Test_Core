@@ -4,6 +4,8 @@ namespace Test.Models
 {
     public class RegistrationBindingModel
     {
+        [Required] // свойство является обязательнысы
+        [StringLength (50)] //  длина своства 
         [Display(Name="Логин")]
         public string Login { get; set; }
 

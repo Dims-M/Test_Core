@@ -39,7 +39,7 @@ namespace Test.Controllers
         //Контролер срабатывающий при регистраци. Откроется вьюха с формами регистрации
         public IActionResult Registracion()
         {
-            string[] sourse = { "Понедельник", "Втторник", "Среда", "Четверг", "Питница", "Суббота", "Воскрсенье", };
+            string[] sourse = { "Понедельник", "Втторник", "Среда", "Четверг", "Питница", "Суббота", "Воскрсенье", }; //Нужные данные. например из Базы данных
             SelectList selectListItems = new SelectList(sourse); // создаем специальны лист для выподающего списка
             ViewBag.SelectItems = selectListItems; //Создаем спец переменную ViewBag.SelectItems. В которой во вьюхе можно обращатсяпо имени
 
@@ -54,7 +54,7 @@ namespace Test.Controllers
         {
             // Обработка полученных данных
 
-            Debug.WriteLine("Selected - " + selectListItems);
+            Debug.WriteLine("Selected - " + selectListItems); //во вьюхе будет показана эта строка
 
             //Debug.WriteLine("First Name = " + firstName);
             //Debug.WriteLine("Last Name = " + lastName);

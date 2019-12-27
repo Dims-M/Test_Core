@@ -10,3 +10,5 @@
 Результат для Test.Controllers.TableGoogleInfoController.GetTablesAlls (Test) = 00:00:01.8565675
 На выполнение метода Test.Controllers.TableGoogleInfoController.Index (Test) затрачено 00:00:00.0006320
 Действие для Test.Controllers.TableGoogleInfoController.GetTablesAlls (Test) = 00:00:00.0535614
+На выполнение метода Test.Controllers.TableGoogleInfoController.Index (Test) затрачено 00:00:00.0004043
+Действие для Test.Controllers.TableGoogleInfoController.GetTablesAlls (Test) = 00:00:00.0673584

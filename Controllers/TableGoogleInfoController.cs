@@ -39,7 +39,7 @@ namespace Test.Controllers
         public IActionResult GetTablesAlls()
         {
             //искустеввно вызывае ошибку
-            throw new SystemException("Искуственная ошибка");
+          //  throw new SystemException("Искуственная ошибка");
             return View(dbTable.TablGoogles.ToList()); // получаем список всех строк из таблицы
         }
 

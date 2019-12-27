@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Test.Models; // пространство имен моделей
 using Microsoft.EntityFrameworkCore; // пространство имен EntityFramework
+using Test.Services;
 
 namespace Test
 {
@@ -34,8 +35,10 @@ namespace Test
             services.AddDbContext<MobileContext>(options => options.UseSqlServer(connection));
             services.AddDbContext<DbConnection1Context>(options => options.UseSqlServer(connection2));
 
-
             services.AddControllersWithViews();
+
+            //добавляем свой сервис с логированием
+            services.AddScoped<Logger>();
 
         }
 

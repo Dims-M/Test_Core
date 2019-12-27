@@ -1,0 +1,12 @@
+На выполнение метода Test.Controllers.TableGoogleInfoController.GetTablesAlls (Test) затрачено 00:00:02.9626792
+На выполнение метода Test.Controllers.TableGoogleInfoController.Index (Test) затрачено 00:00:00.0003646
+На выполнение метода Test.Controllers.TableGoogleInfoController.GetTablesAlls (Test) затрачено 00:00:01.0488594
+На выполнение метода Test.Controllers.TableGoogleInfoController.Index (Test) затрачено 00:00:00.0003746
+На выполнение метода Test.Controllers.TableGoogleInfoController.GetTablesAlls (Test) затрачено 00:00:01.9440487
+На выполнение метода Test.Controllers.TableGoogleInfoController.Index (Test) затрачено 00:00:00.0004262
+На выполнение резальтата Test.Controllers.TableGoogleInfoController.GetTablesAlls (Test) затрачено 00:00:01.8633418
+На выполнение метода Test.Controllers.TableGoogleInfoController.Index (Test) затрачено 00:00:00.0004942
+Действие для Test.Controllers.TableGoogleInfoController.GetTablesAlls (Test) = 00:00:01.9685261
+Результат для Test.Controllers.TableGoogleInfoController.GetTablesAlls (Test) = 00:00:01.8565675
+На выполнение метода Test.Controllers.TableGoogleInfoController.Index (Test) затрачено 00:00:00.0006320
+Действие для Test.Controllers.TableGoogleInfoController.GetTablesAlls (Test) = 00:00:00.0535614

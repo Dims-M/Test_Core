@@ -24,7 +24,7 @@ namespace Test
                 var services = scope.ServiceProvider;
 
                 try
-                {
+                {// соединение с бд
                     var context = services.GetRequiredService<MobileContext>();
                     SampleData.Initialize(context);
                 }

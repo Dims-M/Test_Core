@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Test.Models;
 
 
-namespace Test.Controllers
+namespace Test.Controllers 
 {
 
     //подключение сущ баз данных

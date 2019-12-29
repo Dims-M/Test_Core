@@ -9,12 +9,13 @@ namespace Test.Models
     /// </summary>
     public partial class DbConnection1Context : DbContext
     {
+        //Конструктор по умолчанию 
         public DbConnection1Context()
         {
         }
 
         public DbConnection1Context(DbContextOptions<DbConnection1Context> options)
-            : base(options)
+            : base(options) //отправляем в базовый класс
         {
         }
 

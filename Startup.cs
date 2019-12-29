@@ -15,6 +15,10 @@ namespace Test
 {
     public class Startup
     {
+        /// <summary>
+        /// Конструктор по умолчанию
+        /// </summary>
+        /// <param name="configuration"></param>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -42,7 +46,7 @@ namespace Test
 
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+       // Этот метод вызывается средой выполнения.Используйте этот метод для настройки конвейера HTTP-запросов.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             // если приложение в процессе разработки

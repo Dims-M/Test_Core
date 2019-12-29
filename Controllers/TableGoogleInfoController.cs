@@ -13,7 +13,7 @@ namespace Test.Controllers
     /// </summary>
     public class TableGoogleInfoController : Controller
     {
-        DbConnection1Context dbTable; // Обьект для связи с БД
+        DbConnection1Context dbTable { get; } // Обьект для связи с БД
         [OldProfileAsync] //атрибут для замера производительности клнтрлддера
         public IActionResult Index()
         {

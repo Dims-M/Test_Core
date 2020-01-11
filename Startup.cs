@@ -15,6 +15,10 @@ namespace Test
 {
     public class Startup
     {
+
+        //описание
+       // https://metanit.com/sharp/aspnet5/2.2.php
+
         /// <summary>
         /// Конструктор по умолчанию
         /// </summary>
@@ -52,14 +56,14 @@ namespace Test
             // если приложение в процессе разработки
             if (env.IsDevelopment())
             {
-                // то выводим информацию об ошибке, при наличии ошибки
+                // то выводим информацию об ошибке, при наличии ошибки на страницу
                 app.UseDeveloperExceptionPage();
             }
             else
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-            // добавляем возможност работы со статическими файлами
+            // добавляем возможност работы со статическими файлами. стилями ccs html
             app.UseStaticFiles();
 
             // добавляем возможности маршрутизации

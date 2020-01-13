@@ -13,6 +13,10 @@ using Test.Services;
 
 namespace Test
 {
+    /// <summary>
+    /// Класс с основными настройками.
+    /// Отвечает за конфигурацию сервисов и middleaware
+    /// </summary>
     public class Startup
     {
 

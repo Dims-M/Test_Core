@@ -16,12 +16,15 @@ namespace Test
     /// <summary>
     /// Класс с основными настройками.
     /// Отвечает за конфигурацию сервисов и middleaware
+    /// Метод вызывается средой выполнения
+    /// Метод используется для добавление нужных сервисов в контейнер (Dependency-injection)
     /// </summary>
     public class Startup
     {
+        // Переменная IWebHostEnvironment env содержит информацию о текущей версии исполнения среде веб-хостинга, в которой выполняется приложение
+        //Переменная IApplicationBuilder app - Определяет класс, предоставляющий механизмы для настройки запроса приложения
 
-        //описание
-       // https://metanit.com/sharp/aspnet5/2.2.php
+        // https://metanit.com/sharp/aspnet5/2.2.php
 
         /// <summary>
         /// Конструктор по умолчанию
@@ -34,12 +37,15 @@ namespace Test
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
-        //Этот метод вызывается средой выполнения. Используйте этот метод для добавления служб в контейнер.
+         //Используйте этот метод для добавления служб в контейнер.
+        /// <summary>
+        /// Метод используется для добавление нужных сервисов в контейнер (Dependency-injection)
+        /// </summary>
+        /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllersWithViews();
+            services.AddControllersWithViews(); //
 
             //Строка подключения к БД
             string connection = Configuration.GetConnectionString("DefaultConnection");
@@ -54,7 +60,17 @@ namespace Test
 
         }
 
-       // Этот метод вызывается средой выполнения.Используйте этот метод для настройки конвейера HTTP-запросов.
+
+        //Используйте этот метод для настройки конвейера HTTP-запросов.
+        /// <summary>
+        ///Этот метод для настройки конвейера HTTP-запросов. 
+        ///Является Middleware( типо фильтра) - Это блок программного кода, который является частью конвеера и выполняет обработку HTTP запроса и ответа
+        /// Middleware - может*
+        /// *Определить нужно ли передовать запрос следущиму Middleware в конвеере.
+        /// *Может  выполнить работу до и после следущего Middleware который находится в конвеере.
+        /// </summary>
+        /// <param name="app"></param>
+        /// <param name="env"></param>
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             // если приложение в процессе разработки
@@ -65,8 +81,9 @@ namespace Test
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Home/Error"); //выводим заглушку с ошибкой
             }
+
             // добавляем возможност работы со статическими файлами. стилями ccs html
             app.UseStaticFiles();
 
